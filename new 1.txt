@@ -1,0 +1,10 @@
+en
+conf t
+int range e0/0-3
+no sh
+int range e1/0-3
+no sh
+int range e2/0-3
+no sh
+int range e3/0-3
+no sh

@@ -1,0 +1,21 @@
+conf t
+
+host S6
+
+enable secret cisco
+
+username avram privilege 15 password cisco
+
+
+interface Vlan1
+ ip address 192.168.20.7 255.255.255.0
+ no shut
+ 
+line vty 0 4
+ login local
+ transport input all
+ 
+ end
+ write
+ 
+ 
