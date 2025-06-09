@@ -96,6 +96,109 @@ Out[42]: "somevar = 'hello'"
 In [44]: f"Repr of somevar: {somevar!r}"
 Out[44]: "Repr of somevar: 'hello'"
 
+# string membership
+
+In [1]: some_str = "It was the best of times, it was the worst of times."
+
+In [2]: "the best" in some_str
+Out[2]: True
+
+# Raw strings
+
+In [5]: some_other_str = "What is\new in this\time?"
+
+In [6]: some_other_str
+Out[6]: 'What is\new in this\time?'
+
+In [7]: win_path = "c:\windows\new_dir\test\applications"
+
+In [8]: print(win_path)
+c:\windows
+ew_dir  estpplications
+
+In [9]: print(some_other_str)
+What is
+ew in this      ime?
+
+In [10]: win_path = r"c:\windows\new_dir\test\applications"
+
+In [11]: print(win_path)
+c:\windows\new_dir\test\applications
+
+# string concatenation
+
+In [12]: city = "San Francisco"
+
+In [13]: state = "CA"
+
+In [14]: location = city + ", " + state
+
+In [15]: location
+Out[15]: 'San Francisco, CA'
+
+In [16]: 
 
 
+# string concatenation with += operator
+
+In [16]: data = "line 1 of some output\n"
+
+In [17]: data = data + "line 2 of some output\n"
+
+In [18]: print(data)
+line 1 of some output
+line 2 of some output
+
+
+In [19]: new_data = "line 1 of some output\n"
+
+In [20]: new_data += "line 2 of some output\n"
+
+In [21]: print(new_data)
+line 1 of some output
+line 2 of some output
+
+# strings - ordered lists of characters
+
+In [22]: my_var = "some string"
+
+In [23]: my_var[0]
+Out[23]: 's'
+
+In [24]: my_var[1]
+Out[24]: 'o'
+
+In [25]: my_var[2]
+Out[25]: 'm'
+
+In [26]: for letter in my_var:
+    ...:     print(letter)
+    ...: 
+s
+o
+m
+e
+ 
+s
+t
+r
+i
+n
+g
+
+# length of the string
+
+In [27]: len(my_var)
+Out[27]: 11
+
+
+
+In [40]: print(f"{header1:^20} {header2:^20}")
+       sf_gw1               sf_gw2       
+
+In [41]: print(f"{header:^20} {header:^20}")
+-------------------- --------------------
+
+In [42]: print(f"{sf_gw1:^20} {sf_gw2:^20}")
+  172.31.255.1/24      10.254.1.252/24   
 
