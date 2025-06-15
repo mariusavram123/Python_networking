@@ -9,6 +9,7 @@ import paramiko
 import time
 import re
 import sys
+import getpass
 
 hostname = input("Please enter the IP address or host name to connect to: ")
 
@@ -100,7 +101,8 @@ def check_physical_interface(physical_interface):
 check_physical_interface(physical_interface)
 
 def configure_interface(interface_type, vlan_id, physical_interface):
-    root_pw = input("To execute this command please input the root password: ")
+    print("To execute this command please input the root password: ")
+    root_pw = getpass.getpass()
     conn = paramiko.SSHClient()
     conn.load_system_host_keys()
     conn.connect(hostname, username = username, port = port, key_filename = "/home/" + username + "/.ssh/id_rsa", password = "")
@@ -111,8 +113,8 @@ def configure_interface(interface_type, vlan_id, physical_interface):
     time.sleep(1)
     output = ssh_stdout.read()
     # extract the lines from the output
-    out = output.splitlines(keepends=False)
-    print(out)
+    # out = output.splitlines(keepends=False)
+    # print(out)
     err = ssh_stderr
     print(err)
     print("Done. Please verify the output")
